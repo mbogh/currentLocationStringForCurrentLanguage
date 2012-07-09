@@ -2,7 +2,8 @@
 
 @implementation NSString (CurrentLocationLocalized)
 
-+ (NSString *)currentLocationStringForCurrentLanguage {
++ (NSString *)currentLocationStringForCurrentLanguage
+{
 
     NSDictionary *localizedStringDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
                                                @"Huidige locatie", @"nl",
@@ -41,13 +42,12 @@
                                                @"目前位置", @"zh-TW",
                                                nil];
     
-    NSString *localizedString = nil;
     NSString *currentLanguageCode = [[NSLocale preferredLanguages] objectAtIndex:0];
+    NSString *localizedString = [localizedStringDictionary objectForKey:currentLanguageCode];
     
-    if ([localizedStringDictionary valueForKey:currentLanguageCode]) {
-        localizedString = [NSString stringWithString:[localizedStringDictionary valueForKey:currentLanguageCode]];
-    } else {
-        localizedString = [NSString stringWithString:[localizedStringDictionary valueForKey:@"en"]];
+    if (!localizedString)
+    {
+        localizedString = [localizedStringDictionary objectForKey:@"en"];
     }
     
     return localizedString;
