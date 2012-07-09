@@ -42,7 +42,7 @@
                                                nil];
     
     NSString *localizedString;
-    NSString *currentLanguageCode = [[NSLocale currentLocale] objectForKey: NSLocaleLanguageCode];
+    NSString *currentLanguageCode = [[NSLocale preferredLanguages] objectAtIndex:0];
     
     if ([localizedStringDictionary valueForKey:currentLanguageCode]) {
         localizedString = [NSString stringWithString:[localizedStringDictionary valueForKey:currentLanguageCode]];
