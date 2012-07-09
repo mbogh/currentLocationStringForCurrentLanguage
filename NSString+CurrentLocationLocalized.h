@@ -1,9 +1,5 @@
 #import <Foundation/Foundation.h>
 
-@interface LocalizedCurrentLocation : NSObject {
-
-}
-
+@interface NSString (CurrentLocationLocalized)
 + (NSString *)currentLocationStringForCurrentLanguage;
-
 @end

@@ -1,6 +1,6 @@
-#import "LocalizedCurrentLocation.h"
+#import "NSString+CurrentLocationLocalized.h"
 
-@implementation LocalizedCurrentLocation
+@implementation NSString (CurrentLocationLocalized)
 
 + (NSString *)currentLocationStringForCurrentLanguage {
 
