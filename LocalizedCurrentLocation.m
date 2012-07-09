@@ -4,7 +4,7 @@
 
 + (NSString *)currentLocationStringForCurrentLanguage {
 
-    NSDictionary *localizedStringDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
+    NSDictionary *localizedStringDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
                                                @"Huidige locatie", @"nl",
                                                @"Current Location", @"en",
                                                @"Lieu actuel", @"fr",
@@ -41,7 +41,7 @@
                                                @"目前位置", @"zh-TW",
                                                nil];
     
-    NSString *localizedString;
+    NSString *localizedString = nil;
     NSString *currentLanguageCode = [[NSLocale preferredLanguages] objectAtIndex:0];
     
     if ([localizedStringDictionary valueForKey:currentLanguageCode]) {
